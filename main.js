@@ -1,29 +1,14 @@
-//1
-let month ="12";
+document.querySelector('p').innerHTML = 'first';
+document.querySelectorAll('p')[1].innerHTML = 'second';
+let out = document.querySelector('.out');
+let inp = document.querySelector('.inp');
+let but = document.querySelector('.but');
 
-//2
-let greeting =  'Добро '+'пожаловать'+' на курс' + ' Олег' ;
-console.log(greeting);
-
-//3
-//alert("22.05.2023");
-
-//4
-document.getElementById('one').innerHTML = 'hello world!';
-
-
-//5
-let num = 111;
-let bNum = 999999999999999999999999n;
-let boolean = true;
-let str = "string_string";
-let undef;
-let nul = null;
-let sumb = '-';
-console.log(num);
-console.log(bNum);
-console.log(boolean);
-console.log(str);
-console.log(undef);
-console.log(nul);
-console.log(sumb);
+but.onclick= function() {
+if(inp.value>100)
+{out = inp.value;}
+else if(inp.value<=100)
+{console.log(inp.value);}
+else {document.querySelector('.out').innerHTML = 'не число';}
+inp.value='';
+}
