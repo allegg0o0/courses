@@ -1,30 +1,26 @@
-
-let out = document.querySelector('.out');
-let inp1 = document.querySelector('.inp1');
-let inp2 = document.querySelector('.inp2');
-let but = document.querySelector('.but');
-
-let out2 = document.querySelector('.out2');
-let inp3 = document.querySelector('.inp3');
-let inp4 = document.querySelector('.inp4');
-let but2 = document.querySelector('.but2');
-
-but.onclick= function() 
+for(let count=0;count<=50;count++)
 {
-if(inp1.value == "")
-{out.innerHTML = "нет числа в поле 1";}
-else if(inp2.value =="")
-{out.innerHTML = "нет числа в поле 2";}
-else if(inp1.value*1+inp2.value*1<15) 
-{out.innerHTML = inp1.value*1+inp2.value*1 + " меньше 15";}
-else if(inp1.value*1+inp2.value*1>=15)
-{out.innerHTML = inp1.value*1+inp2.value*1 + " больше 15";}
+    let first = document.createTextNode(count+ '  ');
+    document.body.appendChild(first);
 }
 
-but2.onclick= function() 
+let div = document.createElement('div');
+    document.body.appendChild(div);
+
+for(let count=50;count>=25;count--)
 {
-    if(inp3.value===inp4.value)
-    {{out2.innerHTML = "элементы одинаковые";}}
-    else 
-    {out2.innerHTML = "элементы разные";}
+    let num = document.createTextNode(count+ '  ');  
+    document.body.appendChild(num);
+}
+
+let div2 = document.createElement('div');
+    document.body.appendChild(div2);
+
+for(let count=2500;count<=3000;count++)
+{
+    if(count%2==1)
+    {
+        let num = document.createTextNode(count+ '  ');  
+        document.body.appendChild(num);
+    }
 }
