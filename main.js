@@ -1,80 +1,85 @@
-let two = 2;
-let a = prompt('введите число меньше 2 и больше 0', "");
-let out;
-switch(+a)
+//Задание 1
+function Out(a)
 {
-    case 1:
-        out=  document.createTextNode("Верно!");
-    break;
-    case 0:
-        out= document.createTextNode("нет, 0 не больше 0");
-    break;
-    case 2:
-        out= document.createTextNode("нет, 2 не меньше 2");
-    break;
-    default:
-        out= document.createTextNode("вы ввели что-то не то...");
+    let out = document.createTextNode('значение а =' + a+'   ');
+    document.body.append(out);
+};
+let but = document.querySelector('.but');
+let a = 10;
+but.onclick  = function(){Out(a)};
+
+
+
+
+
+//Задание 2
+
+function Verif(fir, sec)
+{
+    if(fir != fir || fir =='')
+    {return 1;}
+    else if(sec != sec || sec=='')
+    {return 2;}
 }
-document.body.append(out);
-
-
-///////////////////////////////////////
-
-
-let inp1 = document.querySelector('.inp1');
 let but1 = document.querySelector('.but1');
-let div1 = document.createElement('div1');
-document.body.append(div1);
-let season;
-but1.onclick = function()
+let but2 = document.querySelector('.but2');
+let but3 = document.querySelector('.but3');
+let but4 = document.querySelector('.but4');
+let inp1 = document.querySelector('.inp1');
+let inp2 = document.querySelector('.inp2');
+let out = document.createTextNode("_________");;
+document.body.append(out); 
+let fir
+let sec;
+but1.onclick = function() 
 {
-    if(inp1.value == "")
-    {out.innerHTML = "нет числа в поле 'время года'";}
-    else
-    {
-    season = inp1.value;
+    fir = +inp1.value;
+    sec = +inp2.value;
     out.remove();
-    }
-    switch(+season)
-    {
-        case 1:
-        case 2:
-        case 3:
-            out=  document.createTextNode("зима");
-        break;
-        case 4:
-        case 5:
-        case 6:
-            out= document.createTextNode("весна");
-        break;
-        case 7:
-        case 8:
-        case 9:
-            out= document.createTextNode("лето");
-        break;
-        case 10:
-        case 11:
-        case 12:
-            out= document.createTextNode("осень");
-        break;
-        default:
-            out= document.createTextNode("вы ввели что-то не то...");
-        break;
-    }
+    if(Verif(fir, sec) == 1)
+    {out = document.createTextNode('введите число в поле 1'); }
+    else if(Verif(fir, sec) == 2)
+    {out = document.createTextNode('введите число в поле 2');}
+    else
+    {out = document.createTextNode('результат сложения = ' + (fir +sec));} 
     document.body.append(out);
 }
-
-
-////////////////////////
-
-let but2 = document.querySelector('.but2');
-let first = 1;
-let second = '2';
-let undef;
-
-but2.onclick = function()
+but2.onclick = function() 
 {
+    fir = +inp1.value;
+    sec = +inp2.value;
     out.remove();
-    out = document.createTextNode(first??second??undef);
+    if(Verif(fir, sec) == 1)
+    {out = document.createTextNode('введите число в поле 1'); }
+    else if(Verif(fir, sec) == 2)
+    {out = document.createTextNode('введите число в поле 2');}
+    else
+    {out = document.createTextNode('результат вычитания = ' + (fir - sec));} 
+    document.body.append(out);
+}
+but3.onclick = function() 
+{
+    fir = +inp1.value;
+    sec = +inp2.value;
+    out.remove();
+    if(Verif(fir, sec) == 1)
+    {out = document.createTextNode('введите число в поле 1'); }
+    else if(Verif(fir, sec) == 2)
+    {out = document.createTextNode('введите число в поле 2');}
+    else
+    {out = document.createTextNode('результат умножения = ' + (fir * sec));} 
+    document.body.append(out);
+}
+but4.onclick = function() 
+{
+    fir = +inp1.value;
+    sec = +inp2.value;
+    out.remove();
+    if(Verif(fir, sec) == 1)
+    {out = document.createTextNode('введите число в поле 1'); }
+    else if(Verif(fir, sec) == 2)
+    {out = document.createTextNode('введите число в поле 2');}
+    else
+    {out = document.createTextNode('результат деления = ' + (fir / sec));} 
     document.body.append(out);
 }
