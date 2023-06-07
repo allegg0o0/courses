@@ -1,9 +1,11 @@
 //Задание 1
 function Out(a)
 {
-    let out = document.createTextNode('значение а =' + a+'   ');
+    out.remove();
+    out = document.createTextNode('значение а =' + a+'   ');
     document.body.append(out);
 };
+let out = document.createTextNode("_________");
 let but = document.querySelector('.but');
 let a = 10;
 but.onclick  = function(){Out(a)};
@@ -27,7 +29,6 @@ let but3 = document.querySelector('.but3');
 let but4 = document.querySelector('.but4');
 let inp1 = document.querySelector('.inp1');
 let inp2 = document.querySelector('.inp2');
-let out = document.createTextNode("_________");;
 document.body.append(out); 
 let fir
 let sec;
