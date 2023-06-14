@@ -1,73 +1,20 @@
-let but1 = document.querySelector('.but1');
-let out =  document.querySelector('.out');
-let arr = [];
-let len = 15; //длина массива
-for(let i=0;i<len;i++)
-{
-    arr[i]=i+100;
-}
-but1.onclick = function()
-{
-    out = arr[5];
-    document.querySelector('.out').innerHTML = out;
-}
+fetch('https://api.openweathermap.org/data/2.5/weather?lat=52.17&lon=104.17&appid=e4b700d7f9867c894ef3757dc254dc33')
+.then(function(resp){return resp.json()})
+.then(function(data){
+    document.querySelector('.cityName').textContent = data.name
+    document.querySelector('.temp').textContent = Math.round((data.main.temp -273) ) + '°C'
+    document.querySelector('.weather').textContent = data.weather[0]['description']
+    document.querySelector('.icon').innerHTML = `<img src ='https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png'>`
+    document.querySelector('.windSpeed').textContent = data.wind.speed
+    document.querySelector('.humidity').textContent = data.main.humidity
+    document.querySelector('.country').textContent = data.sys.country
+    document.querySelector('.sunrise').textContent = data.sys.sunrise
+    document.querySelector('.sunset').textContent = data.sys.sunset
+    console.log(data)});
 
-//////////
-
-but2 = document.querySelector('.but2');
-but2.onclick = function()
-{
-    out = '';
-    for(let i=0;i<len;i++)
-    {
-        if(arr[i]%2==0)
-        {
-            out += arr[i] + ' ';
-        }
-    }
-    document.querySelector('.out').innerHTML = out;
-}
-
-//////////
-
-but3 = document.querySelector('.but3');
-but3.onclick = function()
-{
-    out = '';
-    for(let i=0;i<len;i++)
-    {
-        if(arr[i]%2==1)
-        {
-            out += arr[i] + ' ';
-        }
-    }
-    document.querySelector('.out').innerHTML = out;
-}
-
-//////////
-
-but4 = document.querySelector('.but4');
-let x =10; //высота массива 
-let y =4; //ширина массива
-let arr2 = new Array();
-arr2.length= x;
-for(let i=0;i<x;i++)
-{
-    arr2[i] = new Array();
-    arr2[i].length=y;
-    for(let j=0;j<y;j++)
-    {
-        arr2[i][j]=i+ '.'+ j + '    ';
-    }
-}
-but4.onclick = function()
-{
-    out = '';
-        for(let j=y-1;j>=0;j--)
-        {
-            
-            out+= arr2[2][j] + '___';
-            
-        }
-    document.querySelector('.out').innerHTML = out;
-}
+    /*fetch('https://api.openweathermap.org/data/2.5/weather?lat=52.17&lon=104.17&appid=e4b700d7f9867c894ef3757dc254dc33')
+.then(function(resp){return resp.json()})
+.then(function(data){
+    document.querySelector('.cityName').textContent = data.name
+    document.querySelector('.temp').textContent = Math.round((data.main.temp -273) ) + '°C'
+    console.log(data)});*/
