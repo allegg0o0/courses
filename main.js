@@ -1,20 +1,69 @@
-fetch('https://api.openweathermap.org/data/2.5/weather?lat=52.17&lon=104.17&appid=e4b700d7f9867c894ef3757dc254dc33')
-.then(function(resp){return resp.json()})
-.then(function(data){
-    document.querySelector('.cityName').textContent = data.name
-    document.querySelector('.temp').textContent = Math.round((data.main.temp -273) ) + '°C'
-    document.querySelector('.weather').textContent = data.weather[0]['description']
-    document.querySelector('.icon').innerHTML = `<img src ='https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png'>`
-    document.querySelector('.windSpeed').textContent = data.wind.speed
-    document.querySelector('.humidity').textContent = data.main.humidity
-    document.querySelector('.country').textContent = data.sys.country
-    document.querySelector('.sunrise').textContent = data.sys.sunrise
-    document.querySelector('.sunset').textContent = data.sys.sunset
-    console.log(data)});
+let arr = [ "e", 'r', 'i', 'k', 't', 'h', 'e', 'b', 'e', 's', 't' ]
+let a = new Set();
+for(let i =0;i<arr.length;i++)
+{
+    a.add (arr[i]);
+}
+for (let val of a) document.write(val+ ' ');
 
-    /*fetch('https://api.openweathermap.org/data/2.5/weather?lat=52.17&lon=104.17&appid=e4b700d7f9867c894ef3757dc254dc33')
-.then(function(resp){return resp.json()})
-.then(function(data){
-    document.querySelector('.cityName').textContent = data.name
-    document.querySelector('.temp').textContent = Math.round((data.main.temp -273) ) + '°C'
-    console.log(data)});*/
+
+///////////////
+
+let out;
+let inp=document.querySelector('.inp');
+let but=document.querySelector('.but');
+
+but.onclick = function()
+{
+    if(inp.value !='')
+    {
+        out = document.createTextNode(inp.value+ ' \n');
+        document.body.appendChild(out);
+    }
+}
+
+
+//////////////////
+
+
+let inp2=document.querySelector('.inp2');
+let but2=document.querySelector('.but2');
+
+but2.onclick = function()
+{
+    if(a.has(inp2.value))
+    {
+        out = document.createTextNode("true"+ ' \n');
+        document.body.appendChild(out);
+    }
+    else 
+    {
+        out = document.createTextNode("false"+ ' \n');
+        document.body.appendChild(out);
+    }
+}
+
+
+//////////////////////////
+
+
+let but3=document.querySelector('.but3');
+ 
+let a2 = new Set();
+for(let i =0;i<20;i++)
+{
+    a2.add(i);
+}
+
+but3.onclick = function()
+{
+    console.log(a2)
+    for(let i of a2)
+{
+    if(i < 5)
+    {
+        a2.delete(i);
+    }
+}
+console.log(a2)
+}
