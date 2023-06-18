@@ -1,44 +1,28 @@
-let circle = document.querySelector('.circle');
-let out;
-circle.onclick = function()
-{
-    circle.classList.add("resize");
-}
+fetch('http://127.0.0.1:5500/')
+.then(data =>{
+console.log(data);
+console.log(data.text());
+})
 
-///////////
+// fetch('http://127.0.0.1:5500/')
+// .then(data =>{
+// console.log(data);
+// data.text().then(data2 =>{
+// console.log(data);
+// })
+// })
 
+// fetch('http://127.0.0.1:5500/')
+// .then(data =>{
+// console.log(data);
+// return data.text()
+// })
+// .then(data =>{
+// console.log(data);
+// })
 
-let ring = document.querySelector('.ring');
-let data = 123;
-ring.ondblclick = function()
-{
-    document.body.createTextNode = ('data');
-    console.log(data);
-    ring.classList.add("resize");
-    out = document.createTextNode('data = ' + data);
-    document.body.appendChild(out);
-}
-
-
-////////////
-
-let ring2 = document.querySelector('.ring2');
-ring2.classList.add("ring");
-ring2.onclick = function()
-{
-    ring2.classList.toggle("cat2");
-}
-
-//////////////
-
-inp = document.querySelector('.inp');
-inp.onkeypress = function(event)
-{
-    out = document.createTextNode(event.key+' ');
-    document.body.appendChild(out);
-    if(+event.key)
-    {
-        out = document.createTextNode('false ' );
-        document.body.appendChild(out);
-    }
-}
+fetch('http://127.0.0.1:5500/')
+.then(data => data.text())
+.then(data =>{
+console.log(data);
+})
